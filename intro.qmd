@@ -1,6 +1,6 @@
 # Introduction 
 
-Ajout d'une référence afin d'illustrer le format complet du livre [@arel-bundock2021]
+Ajout d'une référence afin d'illustrer le format complet du livre [@arel-bundock2021].
 
 
 
