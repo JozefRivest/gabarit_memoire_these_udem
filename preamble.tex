@@ -1,0 +1,36 @@
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{sectsty}
+
+\titleformat{\chapter}[hang]
+  {\centering\bfseries\LARGE} % Formatting for the title
+  {Chapitre \thechapter \ -- } % Prefix for the chapter title
+  {0cm} % Space between the prefix and the title
+  {} % Additional formatting for the chapter title itself
+
+\titleformat{\section}[hang]
+  {\bfseries\bfseries} % Formatting for the title
+  {\thesection \ } % Prefix for the chapter title
+  {0cm} % Space between the prefix and the title
+  {} % Additional formatting for the chapter title itself
+
+\titleformat{\subsection}[hang]
+  {\bfseries} % Formatting for the title
+  {\thesubsection \ } % Prefix for the chapter title
+  {0cm} % Space between the prefix and the title
+  {}
+
+\titleformat{\subsubsection}[hang]
+  {} % Formatting for the title
+  {\thesubsubsection \ } % Prefix for the chapter title
+  {0cm} % Space between the prefix and the title
+  {}
+
+\titlespacing*{\chapter}{0pt}{-1cm}{12pt}
+\titlespacing*{\section}{0pt}{0pt}{0pt}
+\titlespacing*{\subsection}{1.25cm}{0pt}{0pt}
+
+% \chapterfont{\fontsize{18}{0}\selectfont}
+\sectionfont{\fontsize{16}{0}\selectfont} % Change section font size
+\subsectionfont{\fontsize{14}{0}\selectfont} % Change subsection font size
+\subsubsectionfont{\fontsize{12}{0}\selectfont} % Change subsubsection font size

@@ -1,0 +1,55 @@
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+$if(title)$
+\cleardoublepage
+\thispagestyle{empty}
+{\centering
+Université de Montréal \\[2.5cm]
+{\itshape $title$ \par}
+$if(subtitle)$
+{\itshape $subtitle$ \par}
+$endif$
+\vspace{2.5cm}
+{Par \\ Nom de l'auteur.trice \par} %%%% AJOUTER SON PRÉNOM ET SON NOM DE FAMILLE 
+\vspace{2.5cm}
+{Département de science politique, Université de Montréal \\ 
+Faculté des arts et des sciences \par}
+\vspace{2.5cm}
+{Mémoire présenté en vue de l'obtention \\ 
+du grade de Maîtrise ès sciences (M. Sc.) en science politique \par}
+\vspace{2.5cm}
+{ \par} %%%%% AJOUTER LA DATE
+\vspace{2.5cm}
+{\textcopyright{} } %%%%% AJOUTER LES INFORMATIONS POUR LE COPYRIGHT 
+\clearpage
+}
+{\centering
+Université de Montréal \\
+Faculté des Arts et des Sciences, Département de Science Politique \\
+\hrulefill \\[2.5cm]
+{\itshape Ce mémoire intitulé \\
+\textbf{ TITRE } \par}  %%%%%% AJOUTER LE TITRE
+\vspace{2.5cm}
+Présenté par \\
+{\textbf{NOM DE L'AUTEUR.TRICE} \par}  %%%%%%% AJOUTER VOTRE NOM ET VOTRE PRÉNOM
+\vspace{2.5cm}
+{\itshape A été évalué par un jury composé des personnes suivantes :} \\[1cm]
+{\textbf{ }} \\ Président-rapporteur \\[1cm] %%%%%% AJOUTER LE NOM DU PRÉSIDENT RAPPORTEUR
+{\textbf{ }} \\ Directeur de recherche \\[1cm] %%%%% AJOUTER LE NOM DU DIRECTEUR DE RECHERCHE
+{\textbf{ }} \\ Co-directeur de recherche \\[1cm] %%%%%% AJOUTER LE NOM DU CO-DIRECTEUR SI BESOIN
+{\textbf{ }} \\ Membre du jury \\ %%%%% AJOUTER LE NOM DU MEMBRE DU JURY
+}
+$endif$
+$if(abstract)$
+\cleardoublepage
+\thispagestyle{plain}
+\section*{\centering{Résumé}}
+$abstract$
+$endif$
+$if(acknowledgements)$
+\cleardoublepage
+\thispagestyle{plain}
+\section*{Acknowledgements}
+$acknowledgements$
+$endif$

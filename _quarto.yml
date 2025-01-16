@@ -1,0 +1,102 @@
+project:
+  type: book
+
+book:
+  title: "Ajouter titre du mémoire/thèse"
+  author: "Nom de l'auteur.trice"
+  date: "today"
+  chapters:
+    - index.qmd ## C'est nécessaire d'appeler ce chapitre index. Toutefois, inscriver vos remerciements dans ce fichier
+    - intro.qmd ## Chapitre d'intro
+    - théorie_revue_lit.qmd ## Chapitre pour la théorie et la revue de la littérature
+    - méthodologie.qmd ## Chapitre pour la méthodologie
+    - analyses.qmd ## Chapitre pour les analyses
+    - discussion.qmd ## Chapitre pour la discussion
+    - conclusion.qmd ## Chapiter pour la conclusion
+    - bibliographie.qmd ## Chapitre pour la bibliographie
+  appendices: 
+    - annexes.qmd ## Chapitre pour les annexes
+
+bibliography: references.bib 
+language: custom.yml
+
+format:
+  pdf: 
+    documentclass: report
+    template-partials:
+      - before-body.tex
+    lang: fr
+    fontsize: 12pt
+    toc-title: "Table des matières"
+    toc-depth: 4
+    mainfont: "Times New Roman"
+    keep-tex: true
+    papersize: letter
+    linestretch: 1.5
+    link-citations: true
+    link-bibliography: true
+    linkcolor: black
+    citecolor: black
+    urlcolor: black
+    geometry: 
+      - margin=2.5cm
+      - headsep=22pt
+      - headheight=11pt
+      - footskip=33pt
+      - ignorehead
+      - ignorefoot
+      - heightrounded
+    indent: true
+    fig-cap-location: bottom
+    tbl-cap-location: top
+    header-includes: |
+        \usepackage{pdflscape}
+        \usepackage{csquotes}
+        \usepackage{mathtools}
+        \usepackage{amsmath} % For advanced math symbols
+        \usepackage{amssymb} % For additional symbols
+        \usepackage{tikz}
+        \usetikzlibrary{mindmap}
+        \usepackage{xeCJK}
+    include-in-header: preamble.tex
+
+abstract: |
+  \begin{spacing}{1}
+
+  Ajouter résumé français
+
+  \end{spacing}
+  \vspace{1cm}
+  \noindent \textbf{Mots-clés :} Ajouter les mots-clés
+  \clearpage
+
+  \section*{\centering{Abstract}}
+
+  \begin{spacing}{1}
+
+  Ajouter résumé en anglais
+
+  \end{spacing}
+  \vspace{1cm}
+  \noindent \textbf{Keywords :} Ajouter mots-clés en anglais
+  \clearpage
+
+
+crossref: 
+  fig-title: Figure
+  fig-prefix: figure
+  tbl-title: Tableau
+  tbl-prefix: tableau
+  eq-prefix: équation
+  chapters: false
+
+lot: true
+lof: true
+
+editor: source
+
+execute:
+  echo: false
+  message: false
+  error: false
+  warning: false
