@@ -17,7 +17,7 @@ book:
   appendices: 
     - annexes.qmd ## Chapitre pour les annexes
 
-bibliography: references.bib 
+bibliography: references.bib
 language: custom.yml
 
 format:
