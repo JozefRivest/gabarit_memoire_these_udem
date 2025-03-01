@@ -14,14 +14,15 @@ book:
     - discussion.qmd ## Chapitre pour la discussion
     - conclusion.qmd ## Chapiter pour la conclusion
     - bibliographie.qmd ## Chapitre pour la bibliographie
-  appendices: 
+  appendices:
     - annexes.qmd ## Chapitre pour les annexes
 
 bibliography: references.bib
+csl: style-citations.csl
 language: custom.yml
 
 format:
-  pdf: 
+  pdf:
     documentclass: report
     template-partials:
       - before-body.tex
@@ -38,7 +39,7 @@ format:
     linkcolor: black
     citecolor: black
     urlcolor: black
-    geometry: 
+    geometry:
       - margin=2.5cm
       - headsep=22pt
       - headheight=11pt
@@ -50,14 +51,14 @@ format:
     fig-cap-location: bottom
     tbl-cap-location: top
     header-includes: |
-        \usepackage{pdflscape}
-        \usepackage{csquotes}
-        \usepackage{mathtools}
-        \usepackage{amsmath} % For advanced math symbols
-        \usepackage{amssymb} % For additional symbols
-        \usepackage{tikz}
-        \usetikzlibrary{mindmap}
-        \usepackage{xeCJK}
+      \usepackage{pdflscape}
+      \usepackage{csquotes}
+      \usepackage{mathtools}
+      \usepackage{amsmath} % For advanced math symbols
+      \usepackage{amssymb} % For additional symbols
+      \usepackage{tikz}
+      \usetikzlibrary{mindmap}
+      \usepackage{xeCJK}
     include-in-header: preamble.tex
 
 abstract: |
@@ -81,8 +82,7 @@ abstract: |
   \noindent \textbf{Keywords :} Ajouter mots-clés en anglais
   \clearpage
 
-
-crossref: 
+crossref:
   fig-title: Figure
   fig-prefix: figure
   tbl-title: Tableau
