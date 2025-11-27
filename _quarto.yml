@@ -1,10 +1,13 @@
 project:
   type: book
 
+format:
+  these-memoire-udem-pdf: default
+
 book:
-  title: "Ajouter titre du mémoire/thèse"
-  author: "Nom de l'auteur.trice"
-  date: "today"
+  title: "Titre du mémoire ou de la thèse"
+  author: "Auteur/Autrice"
+  date: "Janvier 2026"
   chapters:
     - index.qmd ## C'est nécessaire d'appeler ce chapitre index. Toutefois, inscriver vos remerciements dans ce fichier
     - intro.qmd ## Chapitre d'intro
@@ -17,86 +20,31 @@ book:
   appendices:
     - annexes.qmd ## Chapitre pour les annexes
 
-bibliography: references.bib
-csl: style-citations.csl
-language: custom.yml
+diplome:
+  doctorat: true # Permet de spécifier s'il s'agit d'une thèse ou d'un mémoire
 
-format:
-  pdf:
-    documentclass: report
-    template-partials:
-      - before-body.tex
-    lang: fr
-    fontsize: 12pt
-    toc-title: "Table des matières"
-    toc-depth: 4
-    mainfont: "Times New Roman"
-    keep-tex: true
-    papersize: letter
-    linestretch: 1.5
-    link-citations: true
-    link-bibliography: true
-    linkcolor: black
-    citecolor: black
-    urlcolor: black
-    geometry:
-      - margin=2.5cm
-      - headsep=22pt
-      - headheight=11pt
-      - footskip=33pt
-      - ignorehead
-      - ignorefoot
-      - heightrounded
-    indent: true
-    fig-cap-location: bottom
-    tbl-cap-location: top
-    header-includes: |
-      \usepackage{pdflscape}
-      \usepackage{csquotes}
-      \usepackage{mathtools}
-      \usepackage{amsmath} % For advanced math symbols
-      \usepackage{amssymb} % For additional symbols
-      \usepackage{tikz}
-      \usetikzlibrary{mindmap}
-      \usepackage{xeCJK}
-    include-in-header: preamble.tex
+# president-raporteur: Ajouter président raporteur
 
-abstract: |
-  \begin{spacing}{1}
+# directeur: Ajouter directeur
+# directrice: Ajouter directrice
 
-  Ajouter résumé français
+# co-directeur: Ajouter co-directeur
+# co-directrice: Ajouter co-directrice
 
-  \end{spacing}
-  \vspace{1cm}
-  \noindent \textbf{Mots-clés :} Ajouter les mots-clés
-  \clearpage
+# jury: Ajouter membre du jury
 
-  \section*{\centering{Abstract}}
+# examinateur-externe: Ajouter examinateur-externe (Thèse)
+# examinatrice-externe: Ajouter examinatrice-externe (Thèse)
 
-  \begin{spacing}{1}
+bibliography: bibliography/references.bib
+csl: bibliography/style-citations.csl
 
-  Ajouter résumé en anglais
+resume-fr: |
+  Ajouter un résumé en français ici.
 
-  \end{spacing}
-  \vspace{1cm}
-  \noindent \textbf{Keywords :} Ajouter mots-clés en anglais
-  \clearpage
+mots-clés: "Mot clé 1, mot clé 2, etc."
 
-crossref:
-  fig-title: Figure
-  fig-prefix: figure
-  tbl-title: Tableau
-  tbl-prefix: tableau
-  eq-prefix: équation
-  chapters: false
+resume-eng: |
+  Add the English abstract here.
 
-lot: true
-lof: true
-
-editor: source
-
-execute:
-  echo: false
-  message: false
-  error: false
-  warning: false
+keywords: "Keyword 1, keyword 2, etc."

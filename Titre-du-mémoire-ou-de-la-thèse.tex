@@ -108,9 +108,7 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 
-
- 
-\usepackage[]{biblatex}
+\usepackage[authordate]{biblatex-chicago}
 \addbibresource{bibliography/references.bib}
 
 
@@ -206,9 +204,10 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={Ajouter titre du mémoire/thèse},
-  pdfauthor={Jozef Rivest},
-  pdflang={fr},
+  pdftitle={Titre du mémoire ou de la thèse},
+  pdfauthor={Auteur/Autrice},
+  pdflang={fr-FR},
+  pdfkeywords={Keyword 1, keyword 2, etc.},
   colorlinks=true,
   linkcolor={black},
   filecolor={Maroon},
@@ -217,28 +216,28 @@
   pdfcreator={LaTeX via pandoc}}
 
 
-\title{Ajouter titre du mémoire/thèse}
-\author{Jozef Rivest}
-\date{2025-11-26}
+\title{Titre du mémoire ou de la thèse}
+\author{Auteur/Autrice}
+\date{Janvier 2026}
 \begin{document}
 \cleardoublepage
 \thispagestyle{empty}
 {\centering
 Université de Montréal \\[2.5cm]
-{\itshape Ajouter titre du mémoire/thèse \par}
+{\itshape Titre du mémoire ou de la thèse \par}
 \vspace{2.5cm}
-{Par \\ Jozef
-Rivest \par} %%%% AJOUTER SON PRÉNOM ET SON NOM DE FAMILLE 
+{Par \\ Auteur/Autrice \par} %%%% AJOUTER SON PRÉNOM ET SON NOM DE FAMILLE 
 \vspace{2.5cm}
 {Département de science politique, Université de Montréal \\
 	Faculté des arts et des sciences \par}
 \vspace{2.5cm}
-{Mémoire présenté en vue de l'obtention \\
-	du grade de Maîtrise ès sciences (M. Sc.) en science politique \par}
+
+{Thèse présentée en vue de l'obtention \\
+	du grade de Philosophiae Doctor (Ph.D.) en science politique \par}
 \vspace{2.5cm}
-{ \par} %%%%% AJOUTER LA DATE
+{ Janvier 2026 \par} %%%%% AJOUTER LA DATE
 \vspace{2.5cm}
-{\textcopyright{} } %%%%% AJOUTER LES INFORMATIONS POUR LE COPYRIGHT 
+{\textcopyright{Auteur/Autrice} } %%%%% AJOUTER LES INFORMATIONS POUR LE COPYRIGHT 
 \clearpage
 }
 
@@ -247,40 +246,32 @@ Rivest \par} %%%% AJOUTER SON PRÉNOM ET SON NOM DE FAMILLE
 Université de Montréal \\
 Faculté des Arts et des Sciences, Département de Science Politique \\
 \hrulefill \\[2.5cm]
-{\itshape Ce mémoire intitulé \\
-\textbf{ Ajouter titre du mémoire/thèse } \par}  %%%%%% AJOUTER LE TITRE
+{\itshape Cette thèse intitulée \\
+\textbf{ Titre du mémoire ou de la
+thèse } \par}  %%%%%% AJOUTER LE TITRE
 \vspace{2.5cm}
 Présenté par \\
-{\textbf{Jozef Rivest} \par}  %%%%%%% AJOUTER VOTRE NOM ET VOTRE PRÉNOM
+{\textbf{Auteur/Autrice} \par}  %%%%%%% AJOUTER VOTRE NOM ET VOTRE PRÉNOM
 \vspace{2.5cm}
 {\itshape A été évalué par un jury composé des personnes suivantes :} \\[1cm]
-{\textbf{ }} \\ Président-rapporteur \\[1cm] %%%%%% AJOUTER LE NOM DU PRÉSIDENT RAPPORTEUR
-{\textbf{ }} \\ Directeur de recherche \\[1cm] %%%%% AJOUTER LE NOM DU DIRECTEUR DE RECHERCHE
-{\textbf{ }} \\ Co-directeur de recherche \\[1cm] %%%%%% AJOUTER LE NOM DU CO-DIRECTEUR SI BESOIN
-{\textbf{ }} \\ Membre du jury \\ %%%%% AJOUTER LE NOM DU MEMBRE DU JURY
 }
 \cleardoublepage
 \thispagestyle{plain}
 \section*{\centering{Résumé}}
 \begin{spacing}{1}
-
-Ajouter résumé français
-
+	Ajouter un résumé en français ici.
 \end{spacing}
 \vspace{1cm}
 
-\noindent \textbf{Mots-clés :} Ajouter les mots-clés \clearpage
+\noindent \textbf{Mots-clés :} Mot clé 1, mot clé 2, etc. \clearpage
 
 \section*{\centering{Abstract}}
-
 \begin{spacing}{1}
-
-Ajouter résumé en anglais
-
+	Add the English abstract here.
 \end{spacing}
 \vspace{1cm}
 
-\noindent \textbf{Keywords :} Ajouter mots-clés en anglais \clearpage
+\noindent \textbf{Keywords :} Keyword 1, keyword 2, etc. \clearpage
 
 \renewcommand*\contentsname{Table des matières}
 {
@@ -341,8 +332,12 @@ théorie}\label{revue-de-littuxe9rature-et-thuxe9orie}
 \addcontentsline{toc}{part}{Appendices}
 \appendix
 
+\chapter*{Annexes}\label{annexes}
+\addcontentsline{toc}{chapter}{Annexes}
 
-\printbibliography[title={Annexes}]
+\markboth{Annexes}{Annexes}
+
+
 
 
 

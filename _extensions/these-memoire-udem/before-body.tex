@@ -1,0 +1,103 @@
+$if(has-frontmatter)$
+\frontmatter
+$endif$
+$if(title)$
+\cleardoublepage
+\thispagestyle{empty}
+{\centering
+Université de Montréal \\[2.5cm]
+{\itshape $title$ \par}
+$if(subtitle)$
+{\itshape $subtitle$ \par}
+$endif$
+\vspace{2.5cm}
+{Par \\ $author$ \par} %%%% AJOUTER SON PRÉNOM ET SON NOM DE FAMILLE 
+\vspace{2.5cm}
+{Département de science politique, Université de Montréal \\
+	Faculté des arts et des sciences \par}
+\vspace{2.5cm}
+
+{$if(diplome.maitrise)$Mémoire présenté$else$Thèse présentée$endif$ en vue de l'obtention \\
+	du grade de $if(diplome.maitrise)$Maîtrise ès sciences (M. Sc.)$else$Philosophiae Doctor (Ph.D.)$endif$ en science politique \par}
+\vspace{2.5cm}
+{ $date$ \par} %%%%% AJOUTER LA DATE
+\vspace{2.5cm}
+{\textcopyright{$author$} } %%%%% AJOUTER LES INFORMATIONS POUR LE COPYRIGHT 
+\clearpage
+}
+
+\thispagestyle{empty}
+{\centering
+Université de Montréal \\
+Faculté des Arts et des Sciences, Département de Science Politique \\
+\hrulefill \\[2.5cm]
+{$if(diplome.maitrise)$\itshape Ce mémoire intitulé$else$\itshape Cette thèse intitulée$endif$ \\
+\textbf{ $title$ } \par}  %%%%%% AJOUTER LE TITRE
+\vspace{2.5cm}
+Présenté par \\
+{\textbf{$author$} \par}  %%%%%%% AJOUTER VOTRE NOM ET VOTRE PRÉNOM
+\vspace{2.5cm}
+{\itshape A été évalué par un jury composé des personnes suivantes :} \\[1cm]
+$if(president-raporteur)$
+{\textbf{ $president-raporteur$ }} \\ Président-rapporteur \\[1cm]
+$endif$
+$if(directeur)$
+{\textbf{ $directeur$ }} \\ Directeur de recherche \\[1cm]
+$endif$
+$if(directrice)$
+{\textbf{ $directrice$ }} \\ Directrice de recherche \\[1cm]
+$endif$
+$if(co-directeur)$
+{\textbf{ $co-directeur$ }} \\ Co-directeur de recherche \\[1cm]
+$endif$
+$if(co-directrice)$
+{\textbf{ $co-directrice$ }} \\ Co-directrice de recherche \\[1cm]
+$endif$
+$if(jury)$
+{\textbf{ $jury$ }} \\ Membre du jury \\ [1cm]
+$endif$
+$if(examinateur-externe)$
+{\textbf{ $examinateur-externe$ }} \\ Examinateur externe \\ [1cm]
+$endif$
+$if(examinatrice-externe)$
+{\textbf{ $examinatrice-externe$ }} \\ Examinatrice externe \\ [1cm]
+$endif$
+}
+$endif$
+$if(abstract)$
+\cleardoublepage
+\thispagestyle{plain}
+\section*{\centering{Résumé}}
+$abstract$
+$endif$
+$if(acknowledgements)$
+\cleardoublepage
+\thispagestyle{plain}
+\section*{Acknowledgements}
+$acknowledgements$
+$endif$
+\cleardoublepage
+\thispagestyle{plain}
+$if(resume-fr)$
+\section*{\centering{Résumé}}
+\begin{spacing}{1}
+	$resume-fr$
+\end{spacing}
+\vspace{1cm}
+$endif$
+
+$if(mots-clés)$
+\noindent \textbf{Mots-clés :} $mots-clés$ \clearpage
+$endif$
+
+$if(resume-eng)$
+\section*{\centering{Abstract}}
+\begin{spacing}{1}
+	$resume-eng$
+\end{spacing}
+\vspace{1cm}
+$endif$
+
+$if(keywords)$
+\noindent \textbf{Keywords :} $keywords$ \clearpage
+$endif$
