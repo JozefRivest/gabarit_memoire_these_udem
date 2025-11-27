@@ -59,6 +59,46 @@
 \fi
 \makeatother
 
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
 
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
@@ -148,6 +188,16 @@
 \sectionfont{\fontsize{16}{0}\selectfont} % Change section font size
 \subsectionfont{\fontsize{14}{0}\selectfont} % Change subsection font size
 \subsubsectionfont{\fontsize{12}{0}\selectfont} % Change subsubsection font size
+\usepackage{float}
+\usepackage{tabularray}
+\usepackage[normalem]{ulem}
+\usepackage{graphicx}
+\usepackage{rotating}
+\UseTblrLibrary{booktabs}
+\UseTblrLibrary{siunitx}
+\NewTableCommand{\tinytableDefineColor}[3]{\definecolor{#1}{#2}{#3}}
+\newcommand{\tinytableTabularrayUnderline}[1]{\underline{#1}}
+\newcommand{\tinytableTabularrayStrikeout}[1]{\sout{#1}}
 \usepackage{pdflscape}
 \usepackage{csquotes}
 \usepackage{mathtools}
@@ -309,6 +359,84 @@ théorie}\label{revue-de-littuxe9rature-et-thuxe9orie}
 \bookmarksetup{startatroot}
 
 \chapter{Analyses}\label{analyses}
+
+Quarto permet un intégration facile avec \texttt{R}. Ainsi, ajouter des
+tableaux et des graphiques se fait facilement. La
+figure~\ref{fig-super-graphique} presésente un example. Le code du
+graphique a été ajouté par défault ici, mais il est désactivé
+globalement dans le document
+\texttt{\_extensions/these-memoire-udem/\_extension.yml} avec l'option
+\texttt{echo:\ false}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(palmerpenguins)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\NormalTok{dat }\OtherTok{\textless{}{-}}\NormalTok{ penguins}
+\FunctionTok{ggplot}\NormalTok{(}
+\NormalTok{  dat,}
+  \FunctionTok{aes}\NormalTok{(bill\_length\_mm, body\_mass\_g, }\AttributeTok{color =}\NormalTok{ species, }\AttributeTok{shape =}\NormalTok{ species)}
+\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =}\NormalTok{ loess) }\SpecialCharTok{+}
+  \FunctionTok{theme\_bw}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{analyses_files/figure-pdf/fig-super-graphique-1.pdf}}
+
+}
+
+\caption{\label{fig-super-graphique}Super graphique}
+
+\end{figure}%
+
+Cela peut aussi être fait à l'aide d'un document source qui est situé
+dans un autre fichier.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{source}\NormalTok{(}\StringTok{"code/analyses.R"}\NormalTok{)}
+\NormalTok{summary\_data}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+
+\caption{\label{tbl-resume}Super tableau}
+
+\centering{
+
+\centering
+\begin{tblr}[         %% tabularray outer open
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+column{1-9}={}{halign=l,},
+}                     %% tabularray inner close
+\toprule
+& Unique & Missing Pct. & Mean & SD & Min & Median & Max & Histogram \\ \midrule %% TinyTableHeader
+mpg & 25 & 0 & \num{20.1} & \num{6.0} & \num{10.4} & \num{19.2} & \num{33.9} & \includegraphics[height=1em]{tinytable_assets/id58y08n51prpc508h58q6.png} \\
+cyl & 3 & 0 & \num{6.2} & \num{1.8} & \num{4.0} & \num{6.0} & \num{8.0} & \includegraphics[height=1em]{tinytable_assets/id55fogytepfyb8tvvxkcd.png} \\
+disp & 27 & 0 & \num{230.7} & \num{123.9} & \num{71.1} & \num{196.3} & \num{472.0} & \includegraphics[height=1em]{tinytable_assets/id2i76mt6872coyrc35j6u.png} \\
+hp & 22 & 0 & \num{146.7} & \num{68.6} & \num{52.0} & \num{123.0} & \num{335.0} & \includegraphics[height=1em]{tinytable_assets/idld8iwuiu2czsdeckjjr6.png} \\
+drat & 22 & 0 & \num{3.6} & \num{0.5} & \num{2.8} & \num{3.7} & \num{4.9} & \includegraphics[height=1em]{tinytable_assets/idak4l1wyedme92ftzs5yk.png} \\
+wt & 29 & 0 & \num{3.2} & \num{1.0} & \num{1.5} & \num{3.3} & \num{5.4} & \includegraphics[height=1em]{tinytable_assets/ido5ztcymjxofy8rswdhoj.png} \\
+qsec & 30 & 0 & \num{17.8} & \num{1.8} & \num{14.5} & \num{17.7} & \num{22.9} & \includegraphics[height=1em]{tinytable_assets/id9e8wctqes999bkvvsg8q.png} \\
+vs & 2 & 0 & \num{0.4} & \num{0.5} & \num{0.0} & \num{0.0} & \num{1.0} & \includegraphics[height=1em]{tinytable_assets/idxgs0l3oorm0w1fud3j81.png} \\
+am & 2 & 0 & \num{0.4} & \num{0.5} & \num{0.0} & \num{0.0} & \num{1.0} & \includegraphics[height=1em]{tinytable_assets/idsfz4o4d019yv3n2q37i6.png} \\
+gear & 3 & 0 & \num{3.7} & \num{0.7} & \num{3.0} & \num{4.0} & \num{5.0} & \includegraphics[height=1em]{tinytable_assets/idpu078qz63cb6oq9pbdu9.png} \\
+carb & 6 & 0 & \num{2.8} & \num{1.6} & \num{1.0} & \num{2.0} & \num{8.0} & \includegraphics[height=1em]{tinytable_assets/idy0kcf0l63q761vj6ot11.png} \\
+\bottomrule
+\end{tblr}
+
+}
+
+\end{table}%
 
 \bookmarksetup{startatroot}
 

@@ -1,1 +1,30 @@
 # Analyses
+
+Quarto permet un intégration facile avec `R`. Ainsi, ajouter des tableaux et des graphiques se fait facilement.
+La @fig-super-graphique presésente un example. Le code du graphique a été ajouté par défault ici, mais il est désactivé globalement dans le document `_extensions/these-memoire-udem/_extension.yml` avec l'option `echo: false`.
+
+```{r}
+#| fig-cap: Super graphique
+#| label: fig-super-graphique
+#| echo: true
+library(palmerpenguins)
+library(tidyverse)
+dat <- penguins
+ggplot(
+  dat,
+  aes(bill_length_mm, body_mass_g, color = species, shape = species)
+) +
+  geom_point() +
+  geom_smooth(method = loess) +
+  theme_bw()
+```
+
+Cela peut aussi être fait à l'aide d'un document source qui est situé dans un autre fichier.
+
+```{r}
+#| tbl-cap: Super tableau
+#| label: tbl-resume
+#| echo: true
+source("code/analyses.R")
+summary_data
+```
