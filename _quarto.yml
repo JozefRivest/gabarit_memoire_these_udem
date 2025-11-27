@@ -21,7 +21,8 @@ book:
     - annexes.qmd ## Chapitre pour les annexes
 
 diplome:
-  doctorat: true # Permet de spécifier s'il s'agit d'une thèse ou d'un mémoire
+  doctorat: true # Permet de spécifier qu'il s'agit d'une thèse
+  # memoire: true # Permet de spécifier qu'il s'agit d'un mémoire
 
 # president-raporteur: Ajouter président raporteur
 
